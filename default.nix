@@ -8,5 +8,6 @@
 #   contains just Alice v0.2.0 without the OCaml development tools.
 
 final: prev: {
-  alicecaml = prev.callPackage ./alicecaml.nix { };
+  alicecaml = prev.callPackage
+    (import (builtins.fetchGit "https://github.com/alicecaml/alice")) { };
 }
